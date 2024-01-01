@@ -1,0 +1,11 @@
+services:
+  db:
+    image: postgres:9.5
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=test
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d/:ro
+    ports:
+      - 5432:5432
